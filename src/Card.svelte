@@ -29,7 +29,7 @@
 </script>
 
 {#if cardValue !== undefined}
-	<div class="container">
+	<div class="container" on:click={handleClick}>
 		<p>Do {getCardNumber(cardValue.number)} {currentExcercise}!</p>
 
 		<div class="card">
@@ -60,19 +60,16 @@
 			</div>
 		</div>
 
-		<button class="button" on:click={handleClick}>Change Card</button>
 	</div>
 {:else if deckLength === 0}
-	<div class="container">
+	<div class="container" on:click={handleReset}>
 		<p>Let's workout again!</p>
 		<div class="initialCard" />
-		<button class="button" on:click={handleReset}>Start Over</button>
 	</div>
 {:else}
-	<div class="container">
+	<div class="container" on:click={handleClick}>
 		<p>Let's workout!</p>
 		<div class="initialCard" />
-		<button class="button" on:click={handleClick}>Change Card</button>
 	</div>
 {/if}
 
